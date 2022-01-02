@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <style>
+
+        /*圖片輪播--------------------------------------------------------------------------*/
+        .switch{
+            width: 1000px;
+            height: 470px;
+            position: relative;
+        }
+        .switch>a{
+            display: block;
+            position: absolute;
+            top:0;
+            left:0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            /*當圖片數量增加，影片長度需更改，變為5s*圖片數量*/
+            -webkit-animation: silder 15s linear infinite;
+            animation: silder 15s linear infinite;
+        }
+        .switch>a>img{
+            margin: 0 auto;
+            width: 1000px;
+            height: 500px;
+        }
+        /*動畫關鍵影格*/
+        @-webkit-keyframes silder {
+            3% {
+                opacity: 1;
+                filter: alpha(opacity=100);
+            }
+            27% {
+                opacity: 1;
+                filter: alpha(opacity=100);
+            }
+            30% {
+                opacity: 0;
+                filter: alpha(opacity=0);
+            }
+        }
+        @keyframes silder {
+            3% {
+                opacity: 1;
+                filter: alpha(opacity=100);
+            }
+            27% {
+                opacity: 1;
+                filter: alpha(opacity=100);
+            }
+            30% {
+                opacity: 0;
+                filter: alpha(opacity=0);
+            }
+        }
+        /*每個圖片各延遲5秒*/
+        .switch>a:nth-child(3) {
+            -webkit-animation-delay: 10s;
+                    animation-delay: 10s;               
+        }
+        .switch>a:nth-child(2) {
+            -webkit-animation-delay: 5s;
+                    animation-delay: 5s;
+        }
+        .switch>a:nth-child(1) {
+            -webkit-animation-delay: 0s;
+                    animation-delay: 0s;    
+        }
+        /*滑入時停止播放*/
+        .switch:hover>a{
+        -webkit-animation-play-state: paused;
+                animation-play-state: paused;
+        }       
+
+        /*介紹------------------------------------------------------------*/
+        p{
+            text-align: center;
+            display:flex;
+            align-items:center;
+        }
+        body {
+            background: #ffefd5;            
+        }
+        fieldset {
+			background-color: lightyellow;
+			border-radius: 100px;
+            /*border: solid 2px blue;*/ 
+            width :1000px;
+            margin: 0 auto;
+            font-size: 20px;
+            font-family: 微軟正黑體;
+            padding: 10px;
+		}
+        legend{
+            font-size: 50px;/*文字大小*/
+            font-weight: bold;/*bold 為文字粗體*/
+            font-family: 微軟正黑體;                    
+        }
+        input{
+            margin-top: 50px;
+            width: 270px; /* 寬度 */
+            height: 40px; /* 高度 */
+            border-width: 0px; /* 邊框寬度 */
+            border-radius: 50px; /* 邊框半徑 */
+            background: #68d9dd; /* 背景顏色 */
+            cursor: pointer; /* 滑鼠移入按鈕範圍時出現手勢 */
+            outline: none; /* 不顯示輪廓線 */
+            font-family: Microsoft YaHei; /* 設定字型 */
+            color: black; /* 字型顏色 */
+            font-size: 17px; /* 字型大小 */
+        }
+        input:hover { /* 滑鼠移入按鈕範圍時改變顏色 */
+            background: #e7b922;
+        }
+
+        /*版面配置-----------------------------------------------------------*/
+        #Header{
+        width:1000px;
+        height:500px;
+        text-align:center;
+        line-height:80px;
+        font-size:15px;
+        color:#fffaf3;
+        font-weight:bold;
+        /*background-color:#f9c81e;*/
+        margin: 0 auto;
+        }
+        #content{
+            margin: 0 auto;
+            width: 1000px;
+            height: 1000px;
+        }
+        #cover{
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body align = "center">
+
+    <div id="Header">
+        <div id="cover" class="switch">
+            <a href='#'><img src='./風景/品牌1.jpg' alt=' ' ></a>
+            <a href='#'><img src='./風景/品牌2.jpg' alt=' ' ></a>
+            <a href='#'><img src='./風景/品牌3.jpg' alt=' ' ></a>
+        </div>
+    </div>
+    
+    <div id="content">
+
+        <fieldset>
+            <legend>品牌介紹</legend>
+            <p>
+                日清食品集團（日語：日清食品グループ，英語：Nissin Food Group），是以日清食品控股公司（日語：日清食品ホールディングス株式会社，英語：Nissin Foods Holdings Co., Ltd.）和旗下日清食品公司（日語：日清食品株式会社，英語：Nissin Food Products Co., Ltd.）為中心的日本食品集團。
+
+總部分別位於東京都新宿區（東京本社）與大阪府大阪市淀川區（大阪本社）。由開發了世界最早的速食麵「Chicken Ramen」的台籍日本人安藤百福（原名吳百福）創辦。和Acecook、House Foods並列為同樣總部位置於大阪的速食麵廠商之一。
+            </p>
+        </fieldset>
+
+        <div class="btn">
+            <a href="./index.html">
+                <input type ="button" value = "回首頁" >
+            </a>
+        </div>
+        
+    </div>
+    
+     
+</body>
+</html>
